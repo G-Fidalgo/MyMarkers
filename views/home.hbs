@@ -1,0 +1,23 @@
+<div>
+
+</div>
+<pre id='info'></pre>
+<div id="map"></div>
+<div id='geocoder' class='geocoder'></div>
+
+<div>
+  <form method='POST' action="/home">
+    <label for="name">Name</label> <br>
+    <input type="text" name="name" id="name" placeholder="Add the name">
+    <label for="description">Description</label>
+    <textarea name="description" id="description" placeholder="Add a description for your Marker" cols="30"
+      rows="10"></textarea>
+    <label for="tags">Add your tags</label>
+    <textarea name="tags" id="tags" placeholder="#Madrid #Restaurant #Pub #LaLatina" cols="30" rows="10"></textarea>
+    <input type="text" name="lat" id="lat" placeholder="Lat">
+    <input type="text" name="lng" id="lng" placeholder="Lng">
+    <input type="text" id="formType" value="NewMarker">
+
+    <button>Add your New Marker</button>
+  </form>
+</div>

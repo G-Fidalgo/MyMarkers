@@ -1,0 +1,36 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+#map {
+  width: 80vw;
+  height: 80vh; }
+
+.geocoder {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  left: 50%;
+  margin-left: -25%;
+  top: 20px; }
+
+.mapboxgl-ctrl-geocoder {
+  min-width: 100%; }
+
+#info {
+  display: block;
+  position: relative;
+  margin: 0px auto;
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+  color: #222;
+  background: #fff; }
+
+/*# sourceMappingURL=style.css.map */
