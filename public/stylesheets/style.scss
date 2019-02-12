@@ -1,0 +1,111 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(gothamrnd-bold.woff);
+}
+ 
+ html {
+	background-color: #E1E8EE;
+	align-items: center;
+	justify-content: center;
+	font-family: "myFirstFont", Helvetica, Arial, sans-serif;
+}
+
+body { 
+  margin:0; 
+  padding:0; 
+}
+
+a {
+  color: #00B7FF;
+}
+
+// Login and signup 
+input {
+  margin-top: 5px;
+  width: 212px;
+  height: 25px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: "myFirstFont", Helvetica, Arial, sans-serif;
+  color: grey;
+}
+
+.form-constructor {
+  margin: auto;
+  margin-top: 90px;
+  height: 550px;
+  width: 350px;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#login-header {
+  padding-bottom: 80px;
+}
+
+.login {
+  text-align: center;
+  color: white;
+  padding: 50px;
+}
+
+.signup {
+  text-align: center;
+  color: white;
+  padding: 50px;
+}
+
+.error-message {
+  color: rgb(206, 206, 206);
+  margin-top: 4px;
+  font-size: 13px;
+}
+ 
+
+//Submit Button
+
+.submit-btn {
+  width: 218px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: "myFirstFont", Helvetica, Arial, sans-serif;
+}
+
+// Map 
+
+#map{
+  position: absolute;
+  top:0;
+  bottom:0; 
+  width:100%;
+}
+
+.geocoder {
+  position: fixed;
+  z-index:1;
+  width:100%;
+  left:50%;
+  margin-left:-25%;
+  top:20px;
+  }
+
+.mapboxgl-ctrl-geocoder { 
+  min-width:100%
+}
+
+#info {
+  display: block;
+  position: relative;
+  margin: 0px auto;
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+  color: #222;
+  background: #fff;
+  }
