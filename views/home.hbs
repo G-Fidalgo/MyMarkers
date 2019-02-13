@@ -1,14 +1,37 @@
+<script>
+  function openNav(param) {
+  document.getElementById(`${param}`).style.width = "250px";
+  }
+  
+  function closeNav(param) {
+  document.getElementById(`${param}`).style.width = "0";
+  }
+
+  openNav();
+  closeNav();
+</script>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav('userInfo'), closeNav('')">&#9776;</span>
+
 <div class="map-view">
   <pre id='info'></pre>
   <div id="map"></div>
   <div id='geocoder' class='geocoder'></div>
 </div>
 
-<div id="userInfo">
-  <div><a href="/auth/logout">Logout</a></div>
+<div id="userInfo" class="sidenav">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav('userInfo')">&times;</a>
+    <img src="https://image.flaticon.com/icons/svg/138/138662.svg" alt="profile">
+
+<div class="info-content">
   <div id="userName"></div>
   <div id="numberOfLocations"></div>
+  <div><a href="/auth/logout">Logout</a></div>
+
 </div>
+
+
 
 <div class="box">
   <form method='POST' action="/home">

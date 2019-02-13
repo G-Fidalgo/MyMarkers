@@ -117,5 +117,10 @@ promise.then(currentPosition => {
     });
   }
 
+  // Open and close profile div
+ 
+
   showMarkers();
+
+
 });
