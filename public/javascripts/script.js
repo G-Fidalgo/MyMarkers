@@ -44,7 +44,12 @@ promise.then(currentPosition => {
     document.querySelector("#lng").value = e.lngLat.lng;
   });
 
-  server = `http://localhost:3000`;
+  if (window.location.href.includes('heroku')){
+    server = `https://mymarkers.herokuapp.com`
+  } else {
+    server = `http://localhost:3000`
+  }
+
 
   var places = {
     type: "FeatureCollection",
