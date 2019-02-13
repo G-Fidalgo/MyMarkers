@@ -108,6 +108,12 @@ span {
   z-index: 9;
   position: absolute; }
 
+#userName {
+  color: white; }
+
+#numberOfLocations {
+  color: white; }
+
 #map {
   position: absolute;
   top: 0;

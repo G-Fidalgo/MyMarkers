@@ -1,17 +1,6 @@
-<script>
-  function openNav(param) {
-  document.getElementById(`${param}`).style.width = "250px";
-  }
-  
-  function closeNav(param) {
-  document.getElementById(`${param}`).style.width = "0";
-  }
 
-  openNav();
-  closeNav();
-</script>
 
-<span style="font-size:30px;cursor:pointer" onclick="openNav('userInfo'), closeNav('')">&#9776;</span>
+<span style="font-size:30px;cursor:pointer" onclick="openNav('userInfo')">&#9776;</span>
 
 <div class="map-view">
   <pre id='info'></pre>
@@ -48,3 +37,17 @@
 
     <button>Add your New Marker</button>
   </form>
+</div>
+
+<script>
+  function openNav() {
+  document.getElementById("userInfo").style.width = "250px";
+  }
+  
+  function closeNav() {
+  document.getElementById("userInfo").style.width = "0px";
+  }
+
+  openNav();
+  closeNav();
+</script>
