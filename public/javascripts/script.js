@@ -43,6 +43,79 @@ promise.then(currentPosition => {
     document.querySelector("#lat").value = e.lngLat.lat;
     document.querySelector("#lng").value = e.lngLat.lng;
   });
+
+  server = `http://localhost:3000`;
+
+  var places = {
+    type: "FeatureCollection",
+    features: [
+      // {
+      //   "type": "Feature",
+      //   "geometry": {
+      //     "type": "Point",
+      //     "coordinates": []
+      //   },
+      //   "properties": {
+      //     "name": "",
+      //     "description": ""
+      //   }
+      // },
+    ]
+  };
+
+  function showUserInfo(){
+    axios.get(`${server}/home/getUserInfo`).then(user => {
+      // console.log(user.data.user.markers.length)
+      document.getElementById('userName').innerHTML= `${user.data.user.username}` 
+      document.getElementById('numberOfLocations').innerHTML= `You have saved ${user.data.user.markers.length} locations`
+
+    })
+  }
+
+  showUserInfo()
+
+  function showMarkers() {
+    axios.get(`${server}/home/getMarkets`).then(markers => {
+      markers.data.markers.forEach(marker => {
+        if (marker.lng === undefined || marker.lat === undefined) return;
+        if (typeof marker.lng === "number" && typeof marker.lat === "number") {
+          places.features.push({
+            type: "Feature",
+            geometry: {
+              type: "Point",
+              coordinates: [marker.lng, marker.lat]
+            },
+            properties: {
+              name: `${marker.name}`,
+              description: `${marker.description}`
+            }
+          });
+        }
+        
+        map.on('load', function() {
+          map.addLayer({
+            id: "locations",
+            type: "symbol",
+            // Add a GeoJSON source containing place coordinates and information.
+            source: {
+              type: "geojson",
+              data: places
+            },
+            layout: {
+              // "icon-image": "{icon}-15",
+              "text-field": "H",
+              // "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+              // "text-offset": [0, 0.6],
+              // "text-anchor": "top"
+            }      
+          });
+          
+        })
+         
+ 
+      });
+    });
+  }
+
+  showMarkers();
 });
-
-
