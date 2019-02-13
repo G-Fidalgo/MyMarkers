@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
@@ -11,7 +13,6 @@ const session    = require("express-session");
 const MongoStore = require('connect-mongo')(session);
 const flash      = require("connect-flash");
 const cors = require('cors')
-
 
 mongoose
 .connect(`${process.env.MONGODB}`, {useNewUrlParser: true})
