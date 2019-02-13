@@ -37,8 +37,9 @@ router.post("/", (req, res, next) => {
 });
 
 router.get('/getMarkets',(req,res,next)=>{
-  markerModel.find({})
+  markerModel.find({creator: "5c646f720c10f01b94d2742a"})
   .then(markers=>{
+    console.log(markers)
     res.send(JSON.stringify({ markers }));
   })
   .catch()
