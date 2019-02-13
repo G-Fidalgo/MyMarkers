@@ -49,23 +49,11 @@ promise.then(currentPosition => {
   var places = {
     type: "FeatureCollection",
     features: [
-      // {
-      //   "type": "Feature",
-      //   "geometry": {
-      //     "type": "Point",
-      //     "coordinates": []
-      //   },
-      //   "properties": {
-      //     "name": "",
-      //     "description": ""
-      //   }
-      // },
     ]
   };
 
   function showUserInfo(){
     axios.get(`${server}/home/getUserInfo`).then(user => {
-      // console.log(user.data.user.markers.length)
       document.getElementById('userName').innerHTML= `${user.data.user.username}` 
       document.getElementById('numberOfLocations').innerHTML= `You have saved ${user.data.user.markers.length} locations`
 
@@ -106,13 +94,6 @@ promise.then(currentPosition => {
               'circle-radius': 10,
               'circle-color': 'red'
             }
-            // layout: {
-            //   // "icon-image": "{icon}-15",
-            //   "text-field": "H",
-            //   // "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-            //   // "text-offset": [0, 0.6],
-            //   // "text-anchor": "top"
-            // }      
           });
           
         })
@@ -120,10 +101,7 @@ promise.then(currentPosition => {
  
       });
     });
-  }
-
-  // Open and close profile div
- 
+  } 
 
   showMarkers();
 

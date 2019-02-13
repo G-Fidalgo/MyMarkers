@@ -1,3 +1,6 @@
+require('dotenv').config();
+
+
 const express = require("express");
 const passport = require("passport");
 const router = express.Router();
@@ -43,6 +46,8 @@ router.get('/getMarkets',(req,res,next)=>{
   })
   .catch()
 })
+
+
 
 router.get('/getUserInfo', (req, res, next) => {
   userModel.findById(userId)
