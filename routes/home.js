@@ -16,7 +16,7 @@ router.get("/", ensureLoggedIn("/auth/login"), (req, res, next) => {
 
 router.post("/", (req, res, next) => {
   const newMarker = new markerModel({
-    creator: userId,
+    creator: req.user._id,
     lng: req.body.lng,
     lat: req.body.lat,
     name: req.body.name,
@@ -27,13 +27,11 @@ router.post("/", (req, res, next) => {
   newMarker
     .save()
       .then(marker =>{
-        userModel.findByIdAndUpdate(userId, {$push: {markers: marker._id}})
+        userModel.findByIdAndUpdate(req.user._id, {$push: {markers: marker._id}})
         .then(()=> console.log('The marker was saved succesfully'), res.redirect('/home'))
         .catch(err => console.log('An error has ocurred while referring the marker'))
       })
       .catch(err => console.log('An error has ocurred while saving de marker'))
-    
-
 });
 
 
