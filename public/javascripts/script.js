@@ -1,4 +1,4 @@
-var promise = new Promise(function(resolve, reject) {
+const geolocationReady = new Promise(function(resolve, reject) {
   navigator.geolocation.getCurrentPosition(function(position) {
     resolve(
       (pos = {
@@ -9,7 +9,8 @@ var promise = new Promise(function(resolve, reject) {
   });
 });
 
-promise.then(currentPosition => {
+geolocationReady.then(currentPosition => {
+  //todo: remember to add something like map.init(APIKEY, DOMEl) mario´s style
   mapboxgl.accessToken =
     "pk.eyJ1Ijoic2VuaW9yaXRveCIsImEiOiJjanJ5cmQxc3gweGx5M3ludjVwamMzam1wIn0.c91HFhhkAeZWsT4v1Pm8NQ";
 
@@ -44,48 +45,39 @@ promise.then(currentPosition => {
     document.querySelector("#lng").value = e.lngLat.lng;
   });
 
-  if (window.location.href.includes('heroku')){
-    server = `https://mymarkers.herokuapp.com`
+  if (window.location.href.includes("heroku")) {
+    server = `https://mymarkers.herokuapp.com`;
   } else {
-    server = `http://localhost:3000`
+    server = `http://localhost:3000`;
   }
-
 
   var places = {
     type: "FeatureCollection",
-    features: [
-    ]
+    features: []
   };
 
-  function showUserInfo(){
+  function showUserInfo() {
     axios.get(`${server}/home/getUserInfo`).then(user => {
-      document.getElementById('userName').innerHTML= `${user.data.user.username}` 
-      document.getElementById('numberOfLocations').innerHTML= `You have saved ${user.data.user.markers.length} locations`
-
-    })
+      document.getElementById("userName").innerHTML = `${
+        user.data.user.username
+      }`;
+      document.getElementById(
+        "numberOfLocations"
+      ).innerHTML = `You have saved ${user.data.user.markers.length} locations`;
+    });
   }
 
-  showUserInfo()
+  showUserInfo();
 
   function showMarkers() {
     axios.get(`${server}/home/getMarkets`).then(markers => {
       markers.data.markers.forEach(marker => {
         if (marker.lng === undefined || marker.lat === undefined) return;
         if (typeof marker.lng === "number" && typeof marker.lat === "number") {
-          places.features.push({
-            type: "Feature",
-            geometry: {
-              type: "Point",
-              coordinates: [marker.lng, marker.lat]
-            },
-            properties: {
-              name: `${marker.name}`,
-              description: `${marker.description}`
-            }
-          });
+          places.features.push(toGeoJSON(marker));
         }
-        
-        map.on('load', function() {
+
+        map.on("load", function() {
           map.addLayer({
             id: "locations",
             type: "symbol",
@@ -96,19 +88,14 @@ promise.then(currentPosition => {
             },
             type: "circle",
             paint: {
-              'circle-radius': 10,
-              'circle-color': 'red'
+              "circle-radius": 10,
+              "circle-color": "red"
             }
           });
-          
-        })
-         
- 
+        });
       });
     });
-  } 
+  }
 
   showMarkers();
-
-
 });

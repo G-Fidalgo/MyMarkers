@@ -36,8 +36,12 @@ router.post("/", (req, res, next) => {
 
 });
 
-router.get('/getMarkets',(req,res,next)=>{
-  markerModel.find({creator: "5c646f720c10f01b94d2742a"})
+
+
+router.get('/getMarkets',ensureLoggedIn("/auth/login"), (req,res,next)=>{
+  let userMarkerId = req.user._id
+
+  markerModel.find({creator: `${userMarkerId}`})
   .then(markers=>{
     console.log(markers)
     res.send(JSON.stringify({ markers }));
