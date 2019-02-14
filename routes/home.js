@@ -59,12 +59,10 @@ router.get('/getUserInfo', (req, res, next) => {
 })
 
 router.get('/:findedUserId', (req, res, next)=>{
-  console.log(req.params.findedUserId)
   let userMarkerId = req.params.findedUserId
 
   markerModel.find({creator: `${userMarkerId}`})
   .then(markers=>{
-    console.log(markers)
     res.send(JSON.stringify({ markers }));
   })
   .catch()

@@ -93,24 +93,77 @@ geolocationReady.then(currentPosition => {
           places.features.push(toGeoJSON(marker));
         }
 
-        map.on("load", function() {
-          map.addLayer({
-            id: "locations",
-            type: "symbol",
-            // Add a GeoJSON source containing place coordinates and information.
-            source: {
-              type: "geojson",
-              data: places
-            },
-            type: "circle",
-            paint: {
-              "circle-radius": 10,
-              "circle-color": "red"
-            }
-          });
+       
+      });
+      map.on("load", function() {
+        map.addLayer({
+          id: "locations",
+          type: "symbol",
+          // Add a GeoJSON source containing place coordinates and information.
+          source: {
+            type: "geojson",
+            data: places
+          },
+          type: "circle",
+          paint: {
+            "circle-radius": 10,
+            "circle-color": "red"
+          }
         });
       });
     });
+  }
+
+  function searchedUserMarkers(param) {
+    places.features=[]
+    map.removeLayer('locations')
+    axios.get(`${server}/home/${param}`).then(markers => {
+      markers.data.markers.forEach(marker => {
+        if (marker.lng === undefined || marker.lat === undefined) return;
+        if (typeof marker.lng === "number" && typeof marker.lat === "number") {
+          places.features.push(toGeoJSON(marker));
+        }
+
+
+        
+      });
+
+ 
+        map.addLayer({
+        id: `${param}`,
+        type: "symbol",
+        source: {
+        type: "geojson",
+        data: places,
+        },
+        type: "circle",
+        paint: {
+          "circle-radius": 10,
+          "circle-color": "red"
+        }
+        });
+      // map.on("load", function() {
+      //   map.addLayer({
+      //     id: "p",
+      //     type: "symbol",
+      //     // Add a GeoJSON source containing place coordinates and information.
+      //     source: {
+      //       type: "geojson",
+      //       data: places
+      //     },
+      //     type: "circle",
+      //     paint: {
+      //       "circle-radius": 10,
+      //       "circle-color": "red"
+      //     }
+      //   });
+      // });
+    });
+  }
+
+  document.getElementById('boton').onclick=function(e){
+    searchedUserMarkers('5c6458cb65c37d00173396cf')
+
   }
 
   showMarkers();

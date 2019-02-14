@@ -135,7 +135,7 @@ img {
 
 .geocoder {
   position: fixed;
-  z-index: 1;
+  z-index: -1;
   width: 100%;
   left: 50%;
   margin-left: -25%;
@@ -172,5 +172,9 @@ body {
 
 a {
   color: grey; }
+
+#hola {
+  position: relative;
+  margin: 100px; }
 
 /*# sourceMappingURL=style.css.map */
