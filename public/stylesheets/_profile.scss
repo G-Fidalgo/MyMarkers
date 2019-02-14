@@ -3,21 +3,15 @@ img {
     height: 180px;
     margin-left: 35px;
   }
-  
-  //.info-content {
-    //display: block;
-    //margin-left: 15px;
-    //margin-bottom: 10px;
- // }
-  
+
   .sidenav {
   position: relative;
   z-index: 200;
   top: 0;
   left: 0;
   width: 250px;
-  height: 500px;
-  background-color: #111;
+  height: 700px;
+  background: rgba(17, 17, 17, 0.8);
   overflow-x: hidden;
   transition: 0.1s;
   padding-top: 60px;
@@ -29,14 +23,14 @@ img {
   .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 20px;
+  color: white;
   display: block;
   transition: 0.3s;
   }
   
   .sidenav a:hover {
-  color: #f1f1f1;
+  color: rgb(211, 211, 211);
   }
   
 
@@ -65,4 +59,13 @@ img {
   
   #numberOfLocations {
     color: white;
+  }
+
+  #logout-button {
+    background: rgb(216, 216, 216);
+    width: 75px;
+    margin-top: 370px;
+    border-radius: 5px;
+    color: #111;
+    font-size: 15px;
   }

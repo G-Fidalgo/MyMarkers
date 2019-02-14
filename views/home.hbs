@@ -19,7 +19,7 @@
 <div class="info-content">
   <div id="userName"></div>
   <div id="numberOfLocations"></div>
-  <div><a href="/auth/logout">Logout</a></div>
+  <div><a id="logout-button" href="/auth/logout">Logout</a></div>
 </div>
 
 </div>
@@ -32,16 +32,15 @@
 
   <form method='POST' action="/home">
     <label for="name">Name</label>
-    <input type="text" name="name" id="name" placeholder="Add the name">
+    <input class="marker-input" type="text" name="name" id="name" placeholder="Add the name">
     <label for="description">Description</label>
-    <textarea name="description" id="description" placeholder="Add a description for your Marker" cols="30"
+    <textarea class="text-boxes" name="description" id="description" placeholder="Add a description for your Marker" cols="30"
       rows="10"></textarea>
     <label for="tags">Add your tags</label>
-    <textarea name="tags" id="tags" placeholder="#Madrid #Restaurant #Pub #LaLatina" cols="30" rows="10"></textarea>
+    <textarea class="text-boxes" name="tags" id="tags" placeholder="#Madrid #Restaurant #Pub #LaLatina" cols="30" rows="10"></textarea>
     <input type="text" name="lat" id="lat" placeholder="Lat">
     <input type="text" name="lng" id="lng" placeholder="Lng">
-    <input type="text" id="formType" value="NewMarker">
-    <button>Add your New Marker</button>
+    <button class="markers-submit-button">Add your New Marker</button>
   </form>
   </div>
 
@@ -52,20 +51,25 @@
     if(target == "userInfo") {
       document.querySelector("#userInfo").style.display = "block";
       document.querySelector("#markerInfo").style.display = "none";
+      document.querySelector(".profile-button").style.display = "none";
       
     } else if (target == "markerInfo") {
       document.querySelector("#markerInfo").style.display = "block";
       document.querySelector("#userInfo").style.display = "none";
+      document.querySelector(".profile-button").style.display = "block";
+
     }
   }
   
   function closeNav(target) {
     if(target == "userInfo") {
       document.querySelector("#userInfo").style.display = "none";
+      document.querySelector(".profile-button").style.display = "block";
       //document.getElementById(target).style.display = "none";
       //document.querySelector(".box").style.display = "none";
   } else if (target == "markerInfo") {
       document.querySelector("#markerInfo").style.display = "none";
+      document.querySelector(".profile-button").style.display = "block";
       //document.querySelector(".box").style.display = "none";
 
   }
