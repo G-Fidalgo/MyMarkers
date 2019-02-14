@@ -7,6 +7,7 @@ const markerModel = require("../models/Marker");
 const { ensureLoggedIn, ensureLoggedOut } = require("connect-ensure-login");
 
 router.get("/", ensureLoggedIn("/auth/login"), (req, res, next) => {
+  console.log('gethome')
   username = req.user.username;
   userId = req.user._id;
 
@@ -14,7 +15,6 @@ router.get("/", ensureLoggedIn("/auth/login"), (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
-
   const newMarker = new markerModel({
     creator: userId,
     lng: req.body.lng,
@@ -28,7 +28,7 @@ router.post("/", (req, res, next) => {
     .save()
       .then(marker =>{
         userModel.findByIdAndUpdate(userId, {$push: {markers: marker._id}})
-        .then(()=> console.log('The marker was saved succesfully'))
+        .then(()=> console.log('The marker was saved succesfully'), res.redirect('/home'))
         .catch(err => console.log('An error has ocurred while referring the marker'))
       })
       .catch(err => console.log('An error has ocurred while saving de marker'))
@@ -43,7 +43,6 @@ router.get('/getMarkets',ensureLoggedIn("/auth/login"), (req,res,next)=>{
 
   markerModel.find({creator: `${userMarkerId}`})
   .then(markers=>{
-    console.log(markers)
     res.send(JSON.stringify({ markers }));
   })
   .catch()
@@ -57,5 +56,17 @@ router.get('/getUserInfo', (req, res, next) => {
       res.send(JSON.stringify({ user }))
     })
     .catch()
+})
+
+router.get('/:findedUserId', (req, res, next)=>{
+  console.log(req.params.findedUserId)
+  let userMarkerId = req.params.findedUserId
+
+  markerModel.find({creator: `${userMarkerId}`})
+  .then(markers=>{
+    console.log(markers)
+    res.send(JSON.stringify({ markers }));
+  })
+  .catch()
 })
 module.exports = router;

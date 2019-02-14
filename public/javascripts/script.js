@@ -45,6 +45,22 @@ geolocationReady.then(currentPosition => {
     document.querySelector("#lng").value = e.lngLat.lng;
   });
 
+  // document.getElementById('sandra').onsubmit=pru;
+
+  // function pru(e){
+  //   // e.preventDefault();
+  //   console.log(e)
+  // }
+    // document.getElementById('addMarker').click((e)=>{
+    //   e.preventDefault()
+    //   console.log('envio')
+    //   // axios.post(`${server}/home`)
+    //   //   .then()
+    // })
+    
+    
+  
+
   if (window.location.href.includes("heroku")) {
     server = `https://mymarkers.herokuapp.com`;
   } else {
