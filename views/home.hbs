@@ -1,12 +1,15 @@
 
+<span class="profile-button" style="font-size:30px;cursor:pointer" onclick="openNav('userInfo')">&#9776;</span>
 
-<span style="font-size:30px;cursor:pointer" onclick="openNav('userInfo')">&#9776;</span>
+<span class="markers-button" style="font-size:30px;cursor:pointer" onclick="openNav('markerInfo')">&#9776;</span>
+
 
 <div class="map-view">
-  <pre id='info'></pre>
   <div id="map"></div>
   <div id='geocoder' class='geocoder'></div>
 </div>
+
+
 
 <div id="userInfo" class="sidenav">
 
@@ -17,14 +20,18 @@
   <div id="userName"></div>
   <div id="numberOfLocations"></div>
   <div><a href="/auth/logout">Logout</a></div>
+</div>
 
 </div>
 
 
 
-<div class="box">
-  <form  action="/home" method="POST">
-    <label for="name">Name</label> <br>
+<div id="markerInfo" class="box">
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav('markerInfo')">&times;</a>
+
+  <form method='POST' action="/home">
+    <label for="name">Name</label>
     <input type="text" name="name" id="name" placeholder="Add the name">
     <label for="description">Description</label>
     <textarea name="description" id="description" placeholder="Add a description for your Marker" cols="30"
@@ -36,17 +43,33 @@
     <input type="text" id="formType" value="NewMarker">
     <button>Add your New Marker</button>
   </form>
-</div>
+  </div>
 
 <script>
-  function openNav() {
-  document.getElementById("userInfo").style.width = "250px";
+
+
+  function openNav(target) {
+    if(target == "userInfo") {
+      document.querySelector("#userInfo").style.display = "block";
+      document.querySelector("#markerInfo").style.display = "none";
+      
+    } else if (target == "markerInfo") {
+      document.querySelector("#markerInfo").style.display = "block";
+      document.querySelector("#userInfo").style.display = "none";
+    }
   }
   
-  function closeNav() {
-  document.getElementById("userInfo").style.width = "0px";
-  }
+  function closeNav(target) {
+    if(target == "userInfo") {
+      document.querySelector("#userInfo").style.display = "none";
+      //document.getElementById(target).style.display = "none";
+      //document.querySelector(".box").style.display = "none";
+  } else if (target == "markerInfo") {
+      document.querySelector("#markerInfo").style.display = "none";
+      //document.querySelector(".box").style.display = "none";
 
-  openNav();
-  closeNav();
+  }
+}
+  //openNav();
+  //closeNav();
 </script>

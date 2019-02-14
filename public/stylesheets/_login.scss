@@ -1,0 +1,53 @@
+// Login and signup 
+input {
+    margin-top: 5px;
+    width: 212px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: "myFirstFont", Helvetica, Arial, sans-serif;
+    color: grey;
+  }
+  
+  .form-constructor {
+    margin: auto;
+    margin-top: 90px;
+    height: 550px;
+    width: 350px;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  #login-header {
+    padding-bottom: 80px;
+  }
+  
+  .login {
+    text-align: center;
+    color: white;
+    padding: 50px;
+  }
+  
+  .signup {
+    text-align: center;
+    color: white;
+    padding: 50px;
+  }
+  
+  .error-message {
+    color: rgb(206, 206, 206);
+    margin-top: 4px;
+    font-size: 13px;
+  }
+
+  //Submit Button
+
+.submit-btn {
+    width: 218px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: "myFirstFont", Helvetica, Arial, sans-serif;
+  }

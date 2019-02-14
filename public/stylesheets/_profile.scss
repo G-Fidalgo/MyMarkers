@@ -1,0 +1,68 @@
+img {
+    width: 180px;
+    height: 180px;
+    margin-left: 35px;
+  }
+  
+  //.info-content {
+    //display: block;
+    //margin-left: 15px;
+    //margin-bottom: 10px;
+ // }
+  
+  .sidenav {
+  position: relative;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 500px;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.1s;
+  padding-top: 60px;
+  display: none;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  }
+  
+  .sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+  color: #f1f1f1;
+  }
+  
+
+  //botón de cierre de div
+  .sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  }
+  
+
+  //botón de logout
+  .profile-button {
+    margin-left: 10px;
+    z-index: 9;
+    position: absolute;
+    color:orange;
+  }
+  
+  // campos del formulario
+  #userName {
+    color: white;
+  }
+  
+  #numberOfLocations {
+    color: white;
+  }

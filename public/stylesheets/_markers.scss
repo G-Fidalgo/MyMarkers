@@ -1,0 +1,41 @@
+.box {
+    background-color: rgba(255, 255, 255, 0.5);
+    bottom: 0;
+    width: 0;
+    position: relative;
+    z-index: 200;
+    //top: 0;
+    //left: 0;
+    overflow-x: hidden;
+    transition: 0.1s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .markers-button {
+    bottom: 0;
+    z-index: 9;
+    position: absolute;
+    margin-left: 50%;
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  #markerInfo {
+    position: fixed;
+    bottom: 0;
+    width: 225px;
+    display: none;
+    padding: 30px;
+  }
+  
+  .box .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    margin-top: 5px;
+    }
+  
