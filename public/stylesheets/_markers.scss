@@ -1,16 +1,15 @@
 .box {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
     bottom: 0;
     width: 0;
     position: relative;
     z-index: 200;
-    //top: 0;
-    //left: 0;
     overflow-x: hidden;
     transition: 0.1s;
     padding-top: 60px;
     display: flex;
     flex-direction: column;
+    color: rgb(255, 164, 28);
   }
   
   .markers-button {
@@ -20,6 +19,18 @@
     margin-left: 50%;
     color: red;
     margin-bottom: 10px;
+  }
+
+  .markers-submit-button {
+    background: rgb(255, 164, 28);
+    width: 218px;
+    height: 31px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: white;
+    font-family: "myFirstFont", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    border: none;
   }
   
   #markerInfo {
@@ -37,5 +48,29 @@
     font-size: 36px;
     margin-left: 50px;
     margin-top: 5px;
+    text-decoration: none;
     }
+
+  #lat {
+    display: none;
+  }
+
+  #lng {
+    display: none;
+  }
   
+  .text-boxes {
+    width: 196px;
+    border-radius: 5px;
+    border:rgba(255, 255, 255, 0.8);
+    font-family: "myFirstFont";
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .marker-input {
+    border: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 196px;
+  }
