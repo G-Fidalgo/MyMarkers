@@ -9,7 +9,11 @@
 }
  
  html {
-	//background-color: #E1E8EE;
+  //background-color: #E1E8EE;
+  background-image: url("/images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 	align-items: center;
 	justify-content: center;
 	font-family: "myFirstFont", Helvetica, Arial, sans-serif;

@@ -1,7 +1,7 @@
 
 <span class="profile-button" style="font-size:30px;cursor:pointer" onclick="openNav('userInfo')">&#9776;</span>
 
-<span class="markers-button" style="font-size:30px;cursor:pointer" onclick="openNav('markerInfo')">&#9776;</span>
+<span class="markers-button" style="font-size:30px;cursor:pointer" onclick="openNav('markerInfo')"><img class="icon" src="/images/icon.png"></span>
 
 
 <div class="map-view">
@@ -32,15 +32,15 @@
 
   <form method='POST' action="/home">
     <label for="name">Name</label>
-    <input class="marker-input" type="text" name="name" id="name" placeholder="Add the name">
+    <input class="marker-input" type="text" name="name" id="name" placeholder="Marker name">
     <label for="description">Description</label>
     <textarea class="text-boxes" name="description" id="description" placeholder="Add a description for your Marker" cols="30"
       rows="10"></textarea>
-    <label for="tags">Add your tags</label>
+    <label for="tags">My tags</label>
     <textarea class="text-boxes" name="tags" id="tags" placeholder="#Madrid #Restaurant #Pub #LaLatina" cols="30" rows="10"></textarea>
     <input type="text" name="lat" id="lat" placeholder="Lat">
     <input type="text" name="lng" id="lng" placeholder="Lng">
-    <button class="markers-submit-button">Add your New Marker</button>
+    <button class="markers-submit-button">Add my New Marker</button>
   </form>
   </div>
 
@@ -78,6 +78,5 @@
 
   }
 }
-  //openNav();
-  //closeNav();
+ //➕
 </script>

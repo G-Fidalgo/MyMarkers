@@ -9,7 +9,7 @@
     padding-top: 60px;
     display: flex;
     flex-direction: column;
-    color: rgb(255, 164, 28);
+    color: rgb(255, 197, 65);
   }
   
   .markers-button {
@@ -17,12 +17,18 @@
     z-index: 9;
     position: absolute;
     margin-left: 50%;
-    color: red;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    //background: rgba(34, 34, 34, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 70%;
+    text-align: center;
+    padding-top: 6px;
+    padding-right: 2px;
   }
 
   .markers-submit-button {
-    background: rgb(255, 164, 28);
+    background:  rgb(255, 197, 65);
     width: 218px;
     height: 31px;
     margin-top: 20px;
@@ -73,4 +79,11 @@
     margin-bottom: 10px;
     padding: 10px;
     width: 196px;
+  }
+
+  .icon {
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+    margin-bottom: 20px;
   }

@@ -49,7 +49,8 @@ img {
     margin-left: 10px;
     z-index: 9;
     position: absolute;
-    color:orange;
+    color: rgb(255, 197, 65);
+    top:0;
   }
   
   // campos del formulario
@@ -62,10 +63,10 @@ img {
   }
 
   #logout-button {
-    background: rgb(216, 216, 216);
+    background: rgb(255, 197, 65);
     width: 75px;
     margin-top: 370px;
     border-radius: 5px;
-    color: #111;
+    color: white;
     font-size: 15px;
   }
