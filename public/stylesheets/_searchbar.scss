@@ -1,0 +1,26 @@
+.sidenav-right {
+    position: relative;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 700px;
+    background: rgba(17, 17, 17, 0.8);
+    overflow-x: hidden;
+    transition: 0.1s;
+    padding-top: 60px;
+    display: none;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    }
+
+//Botón para abrir el search bar
+.searchbar-button{
+    margin-right: 50px;
+    z-index: 9;
+    position: absolute;
+    color: rgb(255, 197, 65);
+    top:0;
+    right: 0;
+}
+
