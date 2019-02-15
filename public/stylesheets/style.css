@@ -176,7 +176,7 @@ img {
 
 .geocoder {
   position: fixed;
-  z-index: -1;
+  z-index: 1;
   width: 100%;
   left: 50%;
   margin-left: -25%;
@@ -217,5 +217,9 @@ a {
 #hola {
   position: relative;
   margin: 100px; }
+
+#userSearchBox {
+  position: relative;
+  margin: 300px; }
 
 /*# sourceMappingURL=style.css.map */

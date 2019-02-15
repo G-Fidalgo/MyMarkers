@@ -6,6 +6,15 @@ const markerModel = require("../models/Marker");
 
 const { ensureLoggedIn, ensureLoggedOut } = require("connect-ensure-login");
 
+router.get('/userList', (req, res, next) => {
+  userModel.find({})
+    .then(user=>{
+      res.send(JSON.stringify({ user }))
+    })
+    .catch()
+})
+
+
 router.get("/", ensureLoggedIn("/auth/login"), (req, res, next) => {
   console.log('gethome')
   username = req.user.username;
@@ -20,7 +29,7 @@ router.post("/", (req, res, next) => {
     lng: req.body.lng,
     lat: req.body.lat,
     name: req.body.name,
-    description: req.body.description,
+    description: req.body.description + ' ' + req.body.tags.split(' '),
     tags: req.body.tags.split(' '),
   });
 
@@ -65,4 +74,8 @@ router.get('/:findedUserId', (req, res, next)=>{
   })
   .catch()
 })
+
+
+
+
 module.exports = router;
