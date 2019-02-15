@@ -67,7 +67,7 @@ img {
   position: relative;
   z-index: 200;
   top: 0;
-  left: 0;
+  right: 0;
   width: 250px;
   height: 700px;
   background: rgba(17, 17, 17, 0.8);
@@ -225,6 +225,29 @@ img {
   text-align: center;
   color: #222;
   background: #fff; }
+
+.sidenav-right {
+  position: relative;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 700px;
+  background: rgba(17, 17, 17, 0.8);
+  overflow-x: hidden;
+  transition: 0.1s;
+  padding-top: 60px;
+  display: none;
+  margin-bottom: 10px;
+  padding-left: 20px; }
+
+.searchbar-button {
+  margin-right: 50px;
+  z-index: 9;
+  position: absolute;
+  color: #ffc541;
+  top: 0;
+  right: 0; }
 
 @font-face {
   font-family: myFirstFont;
