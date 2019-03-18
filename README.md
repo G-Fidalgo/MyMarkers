@@ -24,7 +24,7 @@
 >![Landing](https://res.cloudinary.com/dtiirrgu1/image/upload/v1552911853/LogOut.png "Landing")
 
 ## Comming features 
->As you can see there are many improvements to develope on the app
+As you can see we are already developing some improvements in order to finish our MVP, the main goals are to:
 
 * Search for other users and show their points 
 * Add to the user markers other user markers or save them on a fav list
